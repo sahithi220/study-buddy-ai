@@ -342,7 +342,7 @@ export default function Index() {
                     placeholder="Paste your notes here..."
                     className="w-full h-48 rounded-lg border border-border bg-muted/30 p-4 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-ring resize-none"
                   />
-                  <div className="flex flex-wrap gap-3 mt-4">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 mt-4">
                     <button onClick={generateSummary} className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">Generate Summary</button>
                     <button onClick={() => goToPage("chat")} className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-muted transition-colors">Go to Ask AI</button>
                   </div>
