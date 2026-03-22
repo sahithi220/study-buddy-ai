@@ -409,14 +409,14 @@ export default function Index() {
 
           {/* SUMMARIES */}
           {activePage === "summaries" && (
-            <section className="fade-in space-y-6">
-              <div><h2 className="text-2xl font-extrabold text-foreground">Summaries</h2><p className="text-muted-foreground mt-1">Use short summaries and quick points for revision.</p></div>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
-                <div className="hover-rise rounded-xl border border-border bg-card p-6">
+            <section className="fade-in space-y-4 sm:space-y-6">
+              <div><h2 className="text-xl sm:text-2xl font-extrabold text-foreground">Summaries</h2><p className="text-sm text-muted-foreground mt-1">Use short summaries and quick points for revision.</p></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+                <div className="hover-rise rounded-xl border border-border bg-card p-4 sm:p-6">
                   <h3 className="font-bold text-foreground mb-3">Short Summary</h3>
                   <p className="text-sm text-muted-foreground">{summaryData.shortSummary}</p>
                 </div>
-                <div className="hover-rise rounded-xl border border-border bg-card p-6">
+                <div className="hover-rise rounded-xl border border-border bg-card p-4 sm:p-6">
                   <h3 className="font-bold text-foreground mb-3">Key Points</h3>
                   {summaryData.keyPoints.length ? (
                     <ul className="space-y-2">{summaryData.keyPoints.map((point, i) => (
@@ -424,7 +424,7 @@ export default function Index() {
                     ))}</ul>
                   ) : <p className="text-sm text-muted-foreground">No key points yet.</p>}
                 </div>
-                <div className="hover-rise rounded-xl border border-border bg-card p-6">
+                <div className="hover-rise rounded-xl border border-border bg-card p-4 sm:p-6 sm:col-span-2 lg:col-span-1">
                   <h3 className="font-bold text-foreground mb-3">Exam Tip</h3>
                   <p className="text-sm text-muted-foreground">{summaryData.examTip}</p>
                 </div>
@@ -434,9 +434,9 @@ export default function Index() {
 
           {/* QUIZ */}
           {activePage === "quiz" && (
-            <section className="fade-in space-y-6">
-              <div><h2 className="text-2xl font-extrabold text-foreground">Quiz Practice</h2><p className="text-muted-foreground mt-1">Practice with simple interactive cards.</p></div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <section className="fade-in space-y-4 sm:space-y-6">
+              <div><h2 className="text-xl sm:text-2xl font-extrabold text-foreground">Quiz Practice</h2><p className="text-sm text-muted-foreground mt-1">Practice with simple interactive cards.</p></div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                 {quizData.map((item) => <QuizCard key={item.id} item={item} />)}
               </div>
             </section>
@@ -444,26 +444,26 @@ export default function Index() {
 
           {/* SAVED */}
           {activePage === "saved" && (
-            <section className="fade-in space-y-6">
-              <div><h2 className="text-2xl font-extrabold text-foreground">Saved Chats</h2><p className="text-muted-foreground mt-1">Keep useful AI answers ready for revision.</p></div>
+            <section className="fade-in space-y-4 sm:space-y-6">
+              <div><h2 className="text-xl sm:text-2xl font-extrabold text-foreground">Saved Chats</h2><p className="text-sm text-muted-foreground mt-1">Keep useful AI answers ready for revision.</p></div>
               {filteredSavedChats.length === 0 ? (
-                <div className="rounded-xl border border-border bg-card p-10 text-center">
+                <div className="rounded-xl border border-border bg-card p-6 sm:p-10 text-center">
                   <Clock3 size={28} className="mx-auto text-muted-foreground mb-3" />
                   <h3 className="font-bold text-foreground mb-1">No saved chats yet</h3>
                   <p className="text-sm text-muted-foreground">Save important answers from the Ask AI page.</p>
                 </div>
               ) : (
-                <div className="space-y-4">
+                <div className="space-y-3 sm:space-y-4">
                   {filteredSavedChats.map((item) => (
-                    <div key={item.id} className="hover-rise rounded-xl border border-border bg-card p-6">
+                    <div key={item.id} className="hover-rise rounded-xl border border-border bg-card p-4 sm:p-6">
                       <div className="flex items-start justify-between mb-3">
-                        <div><h3 className="font-bold text-foreground">{item.title}</h3><p className="text-xs text-muted-foreground">{item.time}</p></div>
-                        <button onClick={() => deleteSaved(item.id)} className="w-8 h-8 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-destructive hover:border-destructive transition-colors"><Trash2 size={15} /></button>
+                        <div className="min-w-0 flex-1 mr-2"><h3 className="font-bold text-foreground truncate">{item.title}</h3><p className="text-xs text-muted-foreground">{item.time}</p></div>
+                        <button onClick={() => deleteSaved(item.id)} className="w-8 h-8 rounded-lg border border-border flex items-center justify-center text-muted-foreground hover:text-destructive hover:border-destructive transition-colors shrink-0"><Trash2 size={15} /></button>
                       </div>
                       <p className="text-xs font-semibold text-primary mb-1">Question</p>
-                      <p className="text-sm text-muted-foreground mb-3">{item.question}</p>
+                      <p className="text-sm text-muted-foreground mb-3 break-words">{item.question}</p>
                       <p className="text-xs font-semibold text-primary mb-1">Answer</p>
-                      <p className="text-sm text-muted-foreground whitespace-pre-wrap">{item.answer}</p>
+                      <p className="text-sm text-muted-foreground whitespace-pre-wrap break-words">{item.answer}</p>
                     </div>
                   ))}
                 </div>
@@ -473,39 +473,61 @@ export default function Index() {
 
           {/* SETTINGS */}
           {activePage === "settings" && (
-            <section className="fade-in space-y-6">
-              <div><h2 className="text-2xl font-extrabold text-foreground">Settings</h2><p className="text-muted-foreground mt-1">Customize your app experience.</p></div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="rounded-xl border border-border bg-card p-6 space-y-5">
+            <section className="fade-in space-y-4 sm:space-y-6">
+              <div><h2 className="text-xl sm:text-2xl font-extrabold text-foreground">Settings</h2><p className="text-sm text-muted-foreground mt-1">Customize your app experience.</p></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="rounded-xl border border-border bg-card p-4 sm:p-6 space-y-5">
                   <h3 className="font-bold text-foreground">Profile Settings</h3>
                   <div>
                     <label className="text-sm font-medium text-foreground mb-1 block">Name</label>
-                    <input value={settings.username} onChange={(e) => setSettings((p) => ({ ...p, username: e.target.value }))} placeholder="Enter your name" className="w-full rounded-lg border border-border bg-muted/30 px-4 py-2.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring" />
+                    <input value={settings.username} onChange={(e) => setSettings((p) => ({ ...p, username: e.target.value }))} placeholder="Enter your name" className="w-full rounded-lg border border-border bg-muted/30 px-3 sm:px-4 py-2.5 text-sm text-foreground outline-none focus:ring-2 focus:ring-ring" />
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div><h4 className="text-sm font-semibold text-foreground">Exam Mode</h4><p className="text-xs text-muted-foreground">Show more exam-oriented tips.</p></div>
-                    <button onClick={() => setSettings((p) => ({ ...p, examMode: !p.examMode }))} className={`w-11 h-6 rounded-full transition-colors relative ${settings.examMode ? "bg-primary" : "bg-muted"}`}>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="min-w-0"><h4 className="text-sm font-semibold text-foreground">Exam Mode</h4><p className="text-xs text-muted-foreground">Show more exam-oriented tips.</p></div>
+                    <button onClick={() => setSettings((p) => ({ ...p, examMode: !p.examMode }))} className={`w-11 h-6 rounded-full transition-colors relative shrink-0 ${settings.examMode ? "bg-primary" : "bg-muted"}`}>
                       <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-card shadow transition-transform ${settings.examMode ? "left-[22px]" : "left-0.5"}`} />
                     </button>
                   </div>
-                  <div className="flex items-center justify-between">
-                    <div><h4 className="text-sm font-semibold text-foreground">Compact Mode</h4><p className="text-xs text-muted-foreground">Reduce visual spacing slightly.</p></div>
-                    <button onClick={() => setSettings((p) => ({ ...p, compactMode: !p.compactMode }))} className={`w-11 h-6 rounded-full transition-colors relative ${settings.compactMode ? "bg-primary" : "bg-muted"}`}>
+                  <div className="flex items-center justify-between gap-4">
+                    <div className="min-w-0"><h4 className="text-sm font-semibold text-foreground">Compact Mode</h4><p className="text-xs text-muted-foreground">Reduce visual spacing slightly.</p></div>
+                    <button onClick={() => setSettings((p) => ({ ...p, compactMode: !p.compactMode }))} className={`w-11 h-6 rounded-full transition-colors relative shrink-0 ${settings.compactMode ? "bg-primary" : "bg-muted"}`}>
                       <span className={`absolute top-0.5 w-5 h-5 rounded-full bg-card shadow transition-transform ${settings.compactMode ? "left-[22px]" : "left-0.5"}`} />
                     </button>
                   </div>
-                  <button onClick={() => showToast("success", "Settings saved")} className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">Save Settings</button>
+                  <button onClick={() => showToast("success", "Settings saved")} className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity w-full sm:w-auto">Save Settings</button>
                 </div>
-                <div className="rounded-xl border border-border bg-card p-6">
+                <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
                   <h3 className="font-bold text-foreground mb-2">Danger Zone</h3>
                   <p className="text-sm text-muted-foreground mb-4">Clear local app data if you want to reset this demo app.</p>
-                  <button onClick={clearAllData} className="rounded-lg bg-destructive px-5 py-2.5 text-sm font-semibold text-destructive-foreground hover:opacity-90 transition-opacity">Clear All Data</button>
+                  <button onClick={clearAllData} className="rounded-lg bg-destructive px-5 py-2.5 text-sm font-semibold text-destructive-foreground hover:opacity-90 transition-opacity w-full sm:w-auto">Clear All Data</button>
                 </div>
               </div>
             </section>
           )}
         </main>
       </div>
+
+      {/* Mobile Bottom Navigation */}
+      <nav className="fixed bottom-0 left-0 right-0 z-30 flex lg:hidden border-t border-border bg-background/95 backdrop-blur-md">
+        {[
+          { key: "home" as Page, icon: <Home size={20} />, label: "Home" },
+          { key: "chat" as Page, icon: <MessageSquare size={20} />, label: "Ask AI" },
+          { key: "upload" as Page, icon: <Upload size={20} />, label: "Upload" },
+          { key: "quiz" as Page, icon: <BookOpenCheck size={20} />, label: "Quiz" },
+          { key: "dashboard" as Page, icon: <LayoutDashboard size={20} />, label: "More" },
+        ].map((item) => (
+          <button
+            key={item.key}
+            onClick={() => goToPage(item.key)}
+            className={`flex-1 flex flex-col items-center gap-0.5 py-2 text-[10px] font-medium transition-colors ${
+              activePage === item.key ? "text-primary" : "text-muted-foreground"
+            }`}
+          >
+            {item.icon}
+            <span>{item.label}</span>
+          </button>
+        ))}
+      </nav>
 
       {toast && <AppToast type={toast.type} text={toast.text} />}
     </div>
