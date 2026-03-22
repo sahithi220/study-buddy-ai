@@ -317,10 +317,10 @@ export default function Index() {
 
           {/* UPLOAD */}
           {activePage === "upload" && (
-            <section className="fade-in space-y-6">
-              <div><h2 className="text-2xl font-extrabold text-foreground">Upload Notes</h2><p className="text-muted-foreground mt-1">Add a file name and paste notes to prepare better.</p></div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="rounded-xl border border-border bg-card p-6">
+            <section className="fade-in space-y-4 sm:space-y-6">
+              <div><h2 className="text-xl sm:text-2xl font-extrabold text-foreground">Upload Notes</h2><p className="text-sm text-muted-foreground mt-1">Add a file name and paste notes to prepare better.</p></div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
                   <h3 className="font-bold text-foreground mb-4">Choose File</h3>
                   <label className="hover-rise flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-border bg-muted/50 p-10 cursor-pointer hover:border-primary transition-colors">
                     <Upload size={28} className="text-primary" />
