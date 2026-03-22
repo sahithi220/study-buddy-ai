@@ -334,7 +334,7 @@ export default function Index() {
                     </div>
                   )}
                 </div>
-                <div className="rounded-xl border border-border bg-card p-6">
+                <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
                   <h3 className="font-bold text-foreground mb-4">Paste Notes</h3>
                   <textarea
                     value={notes}
