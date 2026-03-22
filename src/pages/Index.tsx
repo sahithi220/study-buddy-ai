@@ -203,28 +203,28 @@ export default function Index() {
 
       {/* Main */}
       <div className="flex-1 flex flex-col min-w-0">
-        <header className="sticky top-0 z-20 flex items-center justify-between border-b border-border bg-background/80 backdrop-blur-md px-4 py-3 lg:px-6">
-          <div className="flex items-center gap-3">
-            <button className="lg:hidden w-9 h-9 rounded-lg border border-border flex items-center justify-center text-foreground hover:bg-muted" onClick={() => setMobileMenuOpen((p) => !p)}>
+        <header className="sticky top-0 z-20 flex items-center justify-between border-b border-border bg-background/80 backdrop-blur-md px-3 py-2.5 sm:px-4 sm:py-3 lg:px-6">
+          <div className="flex items-center gap-2 sm:gap-3 flex-1 min-w-0">
+            <button className="lg:hidden w-9 h-9 rounded-lg border border-border flex items-center justify-center text-foreground hover:bg-muted shrink-0" onClick={() => setMobileMenuOpen((p) => !p)}>
               {mobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
             </button>
-            <div className="hidden sm:flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm w-64">
-              <Search size={16} className="text-muted-foreground" />
-              <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search saved chats..." className="bg-transparent outline-none text-foreground placeholder:text-muted-foreground w-full" />
+            <div className="flex items-center gap-2 rounded-lg border border-border bg-card px-3 py-2 text-sm flex-1 max-w-xs sm:max-w-sm">
+              <Search size={16} className="text-muted-foreground shrink-0" />
+              <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} placeholder="Search..." className="bg-transparent outline-none text-foreground placeholder:text-muted-foreground w-full min-w-0" />
             </div>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2 ml-2 shrink-0">
             <button className="w-9 h-9 rounded-lg border border-border flex items-center justify-center text-foreground hover:bg-muted">
               <Bell size={18} />
             </button>
-            <div className="flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1.5">
+            <div className="flex items-center gap-2 rounded-full border border-border bg-card px-2.5 py-1.5 sm:px-3">
               <UserCircle2 size={20} className="text-primary" />
               <span className="text-sm font-medium text-foreground hidden sm:inline">{settings.username}</span>
             </div>
           </div>
         </header>
 
-        <main className="flex-1 p-4 lg:p-8 max-w-6xl mx-auto w-full">
+        <main className="flex-1 p-3 sm:p-4 lg:p-8 max-w-6xl mx-auto w-full pb-20 lg:pb-8">
           {/* HOME */}
           {activePage === "home" && (
             <section className="fade-in space-y-8">
