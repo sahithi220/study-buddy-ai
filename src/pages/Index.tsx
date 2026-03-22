@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState, type ChangeEvent, type KeyboardEvent } from "react";
 import {
-  Menu, X, Sprout, Home, LayoutDashboard, Upload, MessageSquare,
+  Menu, X, Home, LayoutDashboard, Upload, MessageSquare,
   FileText, BookOpenCheck, Save, Settings, Search, Bell, UserCircle2,
   Sparkles, Brain, BadgeHelp, Send, Trash2, ChevronRight, Clock3, Plus,
 } from "lucide-react";
+import logo from "@/assets/logo.png";
 import StatCard from "@/components/StatCard";
 import FeatureCard from "@/components/FeatureCard";
 import SmallToolCard from "@/components/SmallToolCard";
@@ -165,12 +166,10 @@ export default function Index() {
       <aside className={`fixed inset-y-0 left-0 z-40 w-64 flex flex-col justify-between border-r border-sidebar-border bg-sidebar p-4 transition-transform duration-300 lg:relative lg:translate-x-0 ${mobileMenuOpen ? "translate-x-0" : "-translate-x-full"}`}>
         <div>
           <div className="flex items-center gap-3 mb-8 px-2">
-            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-primary-foreground">
-              <Sprout size={20} />
-            </div>
+            <img src={logo} alt="StudySprout" className="w-10 h-10 rounded-xl object-contain" />
             <div>
               <h1 className="text-base font-bold text-sidebar-foreground leading-tight">StudySprout</h1>
-              <p className="text-xs text-muted-foreground">Learn Better, Grow Smarter</p>
+              <p className="text-xs text-muted-foreground">Learn Smart · Grow Fast</p>
             </div>
           </div>
           <nav className="flex flex-col gap-1">
