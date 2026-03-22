@@ -322,7 +322,7 @@ export default function Index() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
                 <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
                   <h3 className="font-bold text-foreground mb-4">Choose File</h3>
-                  <label className="hover-rise flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-border bg-muted/50 p-10 cursor-pointer hover:border-primary transition-colors">
+                  <label className="hover-rise flex flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed border-border bg-muted/50 p-6 sm:p-10 cursor-pointer hover:border-primary transition-colors">
                     <Upload size={28} className="text-primary" />
                     <h4 className="font-semibold text-foreground">Click to upload notes</h4>
                     <p className="text-xs text-muted-foreground text-center">PDF/DOC handling can be connected later with backend support.</p>
