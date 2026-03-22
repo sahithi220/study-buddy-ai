@@ -370,13 +370,13 @@ export default function Index() {
                       </div>
                     ))}
                   </div>
-                  <div className="border-t border-border p-3 flex gap-2">
+                  <div className="border-t border-border p-2 sm:p-3 flex gap-2">
                     <input
                       value={question}
                       onChange={(e) => setQuestion(e.target.value)}
                       onKeyDown={(e: KeyboardEvent<HTMLInputElement>) => e.key === "Enter" && handleAskAI()}
-                      placeholder="Ask something like: Explain normalization in simple words"
-                      className="flex-1 rounded-lg border border-border bg-muted/30 px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-ring"
+                      placeholder="Ask a question..."
+                      className="flex-1 rounded-lg border border-border bg-muted/30 px-3 sm:px-4 py-2 sm:py-2.5 text-sm text-foreground placeholder:text-muted-foreground outline-none focus:ring-2 focus:ring-ring min-w-0"
                     />
                     <button onClick={handleAskAI} className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-primary-foreground hover:opacity-90 transition-opacity shrink-0">
                       <Send size={18} />
