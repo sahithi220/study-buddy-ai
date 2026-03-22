@@ -267,19 +267,19 @@ export default function Index() {
 
           {/* DASHBOARD */}
           {activePage === "dashboard" && (
-            <section className="fade-in space-y-8">
-              <div className="flex flex-col lg:flex-row gap-6">
-                <div className="flex-1 rounded-2xl bg-gradient-to-br from-primary/10 via-accent to-secondary p-8">
+            <section className="fade-in space-y-6 sm:space-y-8">
+              <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
+                <div className="flex-1 rounded-2xl bg-gradient-to-br from-primary/10 via-accent to-secondary p-5 sm:p-8">
                   <span className="inline-block rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary mb-3">Your study dashboard</span>
-                  <h2 className="text-2xl font-extrabold text-foreground mb-2">Welcome back, <span className="text-primary">{settings.username}</span></h2>
-                  <p className="text-muted-foreground">Keep everything in one place and build a clean study routine.</p>
+                  <h2 className="text-xl sm:text-2xl font-extrabold text-foreground mb-2">Welcome back, <span className="text-primary">{settings.username}</span></h2>
+                  <p className="text-sm sm:text-base text-muted-foreground">Keep everything in one place and build a clean study routine.</p>
                 </div>
-                <div className="lg:w-64 rounded-2xl border border-border bg-card p-6">
+                <div className="lg:w-64 rounded-2xl border border-border bg-card p-5 sm:p-6">
                   <h4 className="font-bold text-foreground mb-2">Today's Focus</h4>
                   <p className="text-sm text-muted-foreground">Revise one topic, ask 3 doubts, and save 1 useful answer.</p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 <StatCard title="Uploaded Notes" value={stats.uploadedNotes} />
                 <StatCard title="AI Chats" value={stats.chatCount} />
                 <StatCard title="Saved Chats" value={stats.savedCount} />
