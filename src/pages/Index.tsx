@@ -302,7 +302,7 @@ export default function Index() {
                     ))}
                   </div>
                 </div>
-                <div className="rounded-xl border border-border bg-card p-6">
+                <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
                   <h3 className="font-bold text-foreground mb-1">Smart Tools</h3>
                   <p className="text-xs text-muted-foreground mb-4">Quick actions for students</p>
                   <div className="space-y-3">
