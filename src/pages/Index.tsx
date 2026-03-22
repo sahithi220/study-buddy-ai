@@ -1,9 +1,10 @@
 import { useEffect, useMemo, useState, type ChangeEvent, type KeyboardEvent } from "react";
 import {
-  Menu, X, Sprout, Home, LayoutDashboard, Upload, MessageSquare,
+  Menu, X, Home, LayoutDashboard, Upload, MessageSquare,
   FileText, BookOpenCheck, Save, Settings, Search, Bell, UserCircle2,
   Sparkles, Brain, BadgeHelp, Send, Trash2, ChevronRight, Clock3, Plus,
 } from "lucide-react";
+import logo from "@/assets/logo.png";
 import StatCard from "@/components/StatCard";
 import FeatureCard from "@/components/FeatureCard";
 import SmallToolCard from "@/components/SmallToolCard";
