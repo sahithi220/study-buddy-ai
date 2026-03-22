@@ -227,27 +227,27 @@ export default function Index() {
         <main className="flex-1 p-3 sm:p-4 lg:p-8 max-w-6xl mx-auto w-full pb-20 lg:pb-8">
           {/* HOME */}
           {activePage === "home" && (
-            <section className="fade-in space-y-8">
-              <div className="flex flex-col lg:flex-row gap-6">
-                <div className="flex-1 rounded-2xl bg-gradient-to-br from-primary/10 via-accent to-secondary p-8 lg:p-10">
-                  <span className="inline-block rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary mb-4">AI study assistant for students</span>
-                  <h2 className="text-2xl lg:text-3xl font-extrabold text-foreground mb-3">
+            <section className="fade-in space-y-6 sm:space-y-8">
+              <div className="flex flex-col lg:flex-row gap-4 sm:gap-6">
+                <div className="flex-1 rounded-2xl bg-gradient-to-br from-primary/10 via-accent to-secondary p-5 sm:p-8 lg:p-10">
+                  <span className="inline-block rounded-full bg-primary/15 px-3 py-1 text-xs font-semibold text-primary mb-3 sm:mb-4">AI study assistant for students</span>
+                  <h2 className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-foreground mb-2 sm:mb-3">
                     Make studying easier with <span className="text-primary">StudySprout</span>
                   </h2>
-                  <p className="text-muted-foreground mb-6 max-w-lg">
+                  <p className="text-sm sm:text-base text-muted-foreground mb-4 sm:mb-6 max-w-lg">
                     Upload notes, ask doubts, generate summaries, practice quiz questions, and save useful answers in one clean workspace.
                   </p>
-                  <div className="flex flex-wrap gap-3">
-                    <button onClick={() => goToPage("upload")} className="flex items-center gap-2 rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
+                  <div className="flex flex-wrap gap-2 sm:gap-3">
+                    <button onClick={() => goToPage("upload")} className="flex items-center gap-2 rounded-lg bg-primary px-4 sm:px-5 py-2 sm:py-2.5 text-sm font-semibold text-primary-foreground hover:opacity-90 transition-opacity">
                       <Plus size={16} /> Start with Notes
                     </button>
-                    <button onClick={() => goToPage("chat")} className="rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-muted transition-colors">
+                    <button onClick={() => goToPage("chat")} className="rounded-lg border border-border bg-card px-4 sm:px-5 py-2 sm:py-2.5 text-sm font-semibold text-foreground hover:bg-muted transition-colors">
                       Ask AI
                     </button>
                   </div>
                 </div>
-                <div className="hover-rise lg:w-72 rounded-2xl border border-border bg-card p-6 flex flex-col items-start gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-accent flex items-center justify-center text-primary">
+                <div className="hover-rise lg:w-72 rounded-2xl border border-border bg-card p-5 sm:p-6 flex flex-col items-start gap-3">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-accent flex items-center justify-center text-primary">
                     <Brain size={24} />
                   </div>
                   <h3 className="font-bold text-foreground">Clear purpose</h3>
@@ -256,7 +256,7 @@ export default function Index() {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                 <FeatureCard title="Upload Notes" icon={<Upload size={22} />} desc="Add notes and organize your study material." />
                 <FeatureCard title="Ask AI" icon={<MessageSquare size={22} />} desc="Get simple student-friendly explanations." />
                 <FeatureCard title="Generate Summaries" icon={<FileText size={22} />} desc="Turn long notes into quick revision points." />
