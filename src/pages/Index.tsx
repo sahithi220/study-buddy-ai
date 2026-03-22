@@ -285,8 +285,8 @@ export default function Index() {
                 <StatCard title="Saved Chats" value={stats.savedCount} />
                 <StatCard title="Summary Points" value={stats.summaryCount} />
               </div>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="rounded-xl border border-border bg-card p-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6">
+                <div className="rounded-xl border border-border bg-card p-4 sm:p-6">
                   <h3 className="font-bold text-foreground mb-1">Recent Study Sessions</h3>
                   <p className="text-xs text-muted-foreground mb-4">Continue where you left off</p>
                   <div className="space-y-3">
