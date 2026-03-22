@@ -353,10 +353,10 @@ export default function Index() {
 
           {/* CHAT */}
           {activePage === "chat" && (
-            <section className="fade-in space-y-6">
-              <div><h2 className="text-2xl font-extrabold text-foreground">Ask AI</h2><p className="text-muted-foreground mt-1">Ask doubts from your notes and get simple responses.</p></div>
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <div className="lg:col-span-2 rounded-xl border border-border bg-card flex flex-col" style={{ minHeight: 420 }}>
+            <section className="fade-in space-y-4 sm:space-y-6">
+              <div><h2 className="text-xl sm:text-2xl font-extrabold text-foreground">Ask AI</h2><p className="text-sm text-muted-foreground mt-1">Ask doubts from your notes and get simple responses.</p></div>
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6">
+                <div className="lg:col-span-2 rounded-xl border border-border bg-card flex flex-col" style={{ minHeight: 320 }}>
                   <div className="flex-1 overflow-y-auto p-4 space-y-3">
                     {chatMessages.map((msg) => (
                       <div key={msg.id} className={`flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}>
